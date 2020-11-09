@@ -1,30 +1,46 @@
-#ifndef METHOD_H
+ï»¿#ifndef METHOD_H
 #define METHOD_H
+
+const int MAZE_X = 15;	// è¿·è·¯ã®æ¨ªå¹…
+const int MAZE_Y = 11;	// è¿·è·¯ã®ç¸¦å¹…
+
+// ãƒã‚¹ã®çŠ¶æ…‹
+enum Block {
+	Empty,	// ä½•ã‚‚ãªã„
+	Wall	// å£
+};
 
 class Method {
 public:
-	// ƒCƒ“ƒNƒŠƒƒ“ƒg
+	// ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ãƒˆ
 	Method();
-	// ƒfƒNƒŠƒƒ“ƒg
+	// ãƒ‡ã‚¯ãƒªãƒ¡ãƒ³ãƒˆ
 	~Method();
+private:
+	// ç©´æ˜ã‚Šæ³•ã§ã®ç”Ÿæˆ
+	static void HoleDigging();
+
+	// å£ä¼¸ã°ã—æ³•ã§ã®ç”Ÿæˆ
+	static void WallExtend();
+
+	// ãƒ™ãƒ«ãƒãƒ³ãƒ•ã‚©ãƒ¼ãƒ‰æ³•ã§ã®æ¢ç´¢
+	static void BellmanFord();
+
+	// ãƒ€ã‚¤ã‚¯ã‚¹ãƒˆãƒ©æ³•ã§ã®æ¢ç´¢
+	static void Dijkstra();
+
+	// A*æ³•ã§ã®æ¢ç´¢
+	static void AStar();
+
+	// è¿·è·¯ã®è¡¨ç¤º
+	static void PrintMaze();
+
 public:
-	// ŒŠŒ@‚è–@‚Å‚Ì¶¬
-	void HoleDigging();
+	// å‡¦ç†ã®å®Ÿè¡Œ
+	static void Execute( int generationMethod, int explorationMethod );
 
-	// •ÇL‚Î‚µ–@‚Å‚Ì¶¬
-	void WallExtend();
-
-	// ƒxƒ‹ƒ}ƒ“ƒtƒH[ƒh–@‚Å‚Ì’Tõ
-	void BellmanFord();
-
-	// ƒ_ƒCƒNƒXƒgƒ‰–@‚Å‚Ì’Tõ
-	void Dijkstra();
-
-	// A*–@‚Å‚Ì’Tõ
-	void AStar();
+private:
+	static int maze[MAZE_X][MAZE_Y];	// è¿·è·¯ã«ä½¿ã†2æ¬¡å…ƒé…åˆ—
 };
-
-// ˆ—‚ÌÀs
-void ProcessStart( int generationMethod, int explorationMethod );
 
 #endif // !METHOD_H

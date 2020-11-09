@@ -1,21 +1,25 @@
-
+ï»¿
 #include <iostream>
+#include <time.h>
+
 #include "Method.h"
 
 int main() {
 
+	srand( ( unsigned ) time( NULL ) );
+
 	int generationMethod = -1;
 	int explorationMethod = -1;
 
-	std::cout << "–À˜H‚Ì¶¬•û–@" << std::endl;
-	std::cout << ":0 = ŒŠŒ@‚è–@ \n:1 = •ÇL‚Î‚µ–@" << std::endl;
+	std::cout << "è¿·è·¯ã®ç”Ÿæˆæ–¹æ³•" << std::endl;
+	std::cout << ":0 = ç©´æŽ˜ã‚Šæ³• \n:1 = å£ä¼¸ã°ã—æ³•" << std::endl;
 	scanf_s( "%d", &generationMethod );
 
-	std::cout << "–À˜H‚Ì’Tõ•û–@" << std::endl;
-	std::cout << ":0 = ƒxƒ‹ƒ}ƒ“ƒtƒH[ƒh–@ \n:1 = ƒ_ƒCƒNƒXƒgƒ‰–@ \n:2 = A*–@" << std::endl;
+	std::cout << "è¿·è·¯ã®æŽ¢ç´¢æ–¹æ³•" << std::endl;
+	std::cout << ":0 = ãƒ™ãƒ«ãƒžãƒ³ãƒ•ã‚©ãƒ¼ãƒ‰æ³• \n:1 = ãƒ€ã‚¤ã‚¯ã‚¹ãƒˆãƒ©æ³• \n:2 = A*æ³•" << std::endl;
 	scanf_s( "%d", &explorationMethod );
 
-	ProcessStart( generationMethod, explorationMethod);
+	Method::Execute( generationMethod, explorationMethod );
 
 	system( "pause" );
 	return 0;
