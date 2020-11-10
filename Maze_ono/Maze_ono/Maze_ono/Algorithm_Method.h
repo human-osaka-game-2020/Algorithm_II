@@ -1,0 +1,4 @@
+#ifndef ALGORITHM_METHOD
+#define ALGORITHM_METHOD
+
+#endif
