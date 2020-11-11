@@ -10,6 +10,20 @@ enum Block {
 	Wall	// 壁
 };
 
+// 配列のマジックナンバー消しくん
+enum Pos{
+	X,
+	Y
+};
+
+// 方向
+enum Direction{
+	Up,
+	Left,
+	Right,
+	Down
+};
+
 class Method {
 public:
 	// インクリメント

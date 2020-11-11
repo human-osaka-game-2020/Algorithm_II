@@ -24,27 +24,39 @@ void Method::HoleDigging() {
 
 	// 奇数の場所に起点となる穴を掘る
 	{
-		int randResult[2] = {0, 0};	// 生成された値を保存する用 (x, y)
+		int randResult[2] = {};	// 生成された値を保存する用 (x, y)
 
 		while ( true ){
-			randResult[0] = rand() % MAZE_X;
-			if ( randResult[0] % 2 == 1 ) break;
+			randResult[Pos::X] = rand() % MAZE_X;
+			// 偶数になったら再抽選
+			if ( randResult[Pos::X] % 2 == 1 ) break;
 		}
 
 		while ( true ){
-			randResult[1] = rand() % MAZE_Y;
-			if ( randResult[1] % 2 == 1 ) break;
+			randResult[Pos::Y] = rand() % MAZE_Y;
+			if ( randResult[Pos::Y] % 2 == 1 ) break;
 		}
 
-		maze[randResult[0]][randResult[1]] = Block::Empty;
+		maze[randResult[Pos::X]][randResult[Pos::Y]] = Block::Empty;
 	}
 
-	//掘り堀り
-	while ( true ){
-		// 掘る方向を決める
-		int digDirection = rand() % 4;
+	// 掘り堀り
 
-		// 穴を掘れない場合は戻る
+	// 掘る方向を決める
+	int digDirection = rand() % 4;
+
+	switch ( digDirection )
+	{
+	case Direction::Up:
+		break;
+	case Direction::Left:
+		break;
+	case Direction::Right:
+		break;
+	case Direction::Down:
+		break;
+	default:
+		break;
 	}
 }
 
@@ -107,4 +119,6 @@ void Method::Execute( int generationMethod, int explorationMethod ) {
 		return;
 		break;
 	}
+
+	PrintMaze();
 }
