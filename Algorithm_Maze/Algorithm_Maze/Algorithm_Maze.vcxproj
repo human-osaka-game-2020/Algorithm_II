@@ -139,8 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\ASter.cpp" />
+    <ClCompile Include="..\BellmanFord.cpp" />
+    <ClCompile Include="..\Dijkstra.cpp" />
+    <ClCompile Include="..\HoleDigging.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Method.cpp" />
+    <ClCompile Include="..\WallExtend.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Method.h" />

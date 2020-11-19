@@ -1,6 +1,4 @@
 ﻿
-#include <iostream>
-
 #include "Method.h"
 
 int Method::maze[MAZE_X][MAZE_Y] = {};
@@ -10,69 +8,6 @@ Method::Method() {
 }
 
 Method::~Method() {
-
-}
-
-void Method::HoleDigging() {
-
-	// 全て壁で埋める
-	for ( int y = 0; y < MAZE_Y; y++ ) {
-		for ( int x = 0; x < MAZE_X; x++ ) {
-			maze[x][y] = Block::Wall;
-		}
-	}
-
-	// 奇数の場所に起点となる穴を掘る
-	{
-		int randResult[2] = {};	// 生成された値を保存する用 (x, y)
-
-		while ( true ){
-			randResult[Pos::X] = rand() % MAZE_X;
-			// 偶数になったら再抽選
-			if ( randResult[Pos::X] % 2 == 1 ) break;
-		}
-
-		while ( true ){
-			randResult[Pos::Y] = rand() % MAZE_Y;
-			if ( randResult[Pos::Y] % 2 == 1 ) break;
-		}
-
-		maze[randResult[Pos::X]][randResult[Pos::Y]] = Block::Empty;
-	}
-
-	// 掘り堀り
-
-	// 掘る方向を決める
-	int digDirection = rand() % 4;
-
-	switch ( digDirection )
-	{
-	case Direction::Up:
-		break;
-	case Direction::Left:
-		break;
-	case Direction::Right:
-		break;
-	case Direction::Down:
-		break;
-	default:
-		break;
-	}
-}
-
-void Method::WallExtend() {
-
-}
-
-void Method::BellmanFord() {
-
-}
-
-void Method::Dijkstra() {
-
-}
-
-void Method::AStar() {
 
 }
 
@@ -90,35 +25,43 @@ void Method::PrintMaze(){
 	}
 }
 
-void Method::Execute( int generationMethod, int explorationMethod ) {
-	switch ( generationMethod )
+void Method::Execute() {
+
+	int create = -1;
+	int search = -1;
+
+
+	std::cout << "迷路の生成方法" << std::endl;
+	std::cout << ":0 = 穴掘り法 \n:1 = 壁伸ばし法" << std::endl;
+	scanf_s( "%d", &create );
+
+	std::cout << "迷路の探索方法" << std::endl;
+	std::cout << ":0 = ベルマンフォード法 \n:1 = ダイクストラ法 \n:2 = A*法" << std::endl;
+	scanf_s( "%d", &search );
+
+	switch ( create )
 	{
 	case 0:
-		Method::HoleDigging();
+		HoleDigging::Execute();
 		break;
 	case 1:
-		Method::WallExtend();
-		break;
 	default:
-		return;
+		WallExtend::Execute();
 		break;
 	}
 
-	switch ( explorationMethod )
+	switch ( search )
 	{
 	case 0:
-		Method::BellmanFord();
+		BellmanFord::Execute();
 		break;
 	case 1:
-		Method::Dijkstra();
+		Dijkstra::Execute();
 		break;
 	case 2:
-		Method::AStar();
-		break;
 	default:
-		return;
+		ASter::Execute();
 		break;
 	}
 
-	PrintMaze();
 }

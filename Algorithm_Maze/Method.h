@@ -1,6 +1,8 @@
 ﻿#ifndef METHOD_H
 #define METHOD_H
 
+#include <iostream>
+
 const int MAZE_X = 15;	// 迷路の横幅
 const int MAZE_Y = 11;	// 迷路の縦幅
 
@@ -8,12 +10,6 @@ const int MAZE_Y = 11;	// 迷路の縦幅
 enum Block {
 	Empty,	// 何もない
 	Wall	// 壁
-};
-
-// 配列のマジックナンバー消しくん
-enum Pos{
-	X,
-	Y
 };
 
 // 方向
@@ -26,35 +22,95 @@ enum Direction{
 
 class Method {
 public:
-	// インクリメント
+
+	/// @brief インクリメント
 	Method();
-	// デクリメント
+
+	/// @brief デクリメント
 	~Method();
-private:
-	// 穴掘り法での生成
-	static void HoleDigging();
 
-	// 壁伸ばし法での生成
-	static void WallExtend();
+protected:
 
-	// ベルマンフォード法での探索
-	static void BellmanFord();
-
-	// ダイクストラ法での探索
-	static void Dijkstra();
-
-	// A*法での探索
-	static void AStar();
-
-	// 迷路の表示
+	/// @brief 迷路の表示
 	static void PrintMaze();
 
 public:
-	// 処理の実行
-	static void Execute( int generationMethod, int explorationMethod );
 
-private:
+	/// @brief 実行
+	static void Execute();
+
+protected:
 	static int maze[MAZE_X][MAZE_Y];	// 迷路に使う2次元配列
+
+};
+
+/// @brief 穴掘り法での生成
+class HoleDigging : public Method{
+public:
+
+	/// @brief コンストラクタ
+	HoleDigging();
+
+	/// @brief デストラクタ
+	~HoleDigging();
+
+	/// @brief 実行
+	static void Execute();
+
+};
+
+class WallExtend : public Method{
+public:
+
+	/// @brief コンストラクタ
+	WallExtend();
+
+	/// @brief デストラクタ
+	~WallExtend();
+
+	/// @brief 実行
+	static void Execute();
+
+};
+
+class BellmanFord : public Method{
+public:
+
+	/// @brief コンストラクタ
+	BellmanFord();
+
+	/// @brief デストラクタ
+	~BellmanFord();
+
+	/// @brief 実行
+	static void Execute();
+
+};
+
+class Dijkstra : public Method{
+public:
+
+	/// @brief コンストラクタ
+	Dijkstra();
+
+	/// @brief デストラクタ
+	~Dijkstra();
+
+	/// @brief 実行
+	static void Execute();
+};
+
+class ASter : public Method{
+public:
+
+	/// @brief コンストラクタ
+	ASter();
+
+	/// @brief デストラクタ
+	~ASter();
+	
+	/// @brief 実行
+	static void Execute();
 };
 
 #endif // !METHOD_H
