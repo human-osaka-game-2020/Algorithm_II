@@ -5,39 +5,33 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="ソース ファイル\Build">
+      <UniqueIdentifier>{4390637f-6373-40d7-abf1-fd44292c5e22}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="ソース ファイル\Search">
+      <UniqueIdentifier>{8389c6da-1008-499a-9f51-5796982c65a5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Method.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
+    <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\HoleDigging.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="..\BellmanFord.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Dijkstra.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Build</Filter>
     </ClCompile>
     <ClCompile Include="..\WallExtend.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Build</Filter>
     </ClCompile>
     <ClCompile Include="..\ASter.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>ソース ファイル\Search</Filter>
     </ClCompile>
-    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\BellmanFord.cpp">
+      <Filter>ソース ファイル\Search</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dijkstra.cpp">
+      <Filter>ソース ファイル\Search</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Method.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Method.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
+    <ClInclude Include="..\Method.h" />
   </ItemGroup>
 </Project>

@@ -30,7 +30,6 @@ void Method::Execute() {
 	int create = -1;
 	int search = -1;
 
-
 	std::cout << "迷路の生成方法" << std::endl;
 	std::cout << ":0 = 穴掘り法 \n:1 = 壁伸ばし法" << std::endl;
 	scanf_s( "%d", &create );
