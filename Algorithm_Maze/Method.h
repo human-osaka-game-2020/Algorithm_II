@@ -77,6 +77,9 @@ public:
 	/// @brief 実行
 	static void Execute();
 
+private:
+	static void Build( Position pos_ );
+
 };
 
 class BellmanFord : public Method{
