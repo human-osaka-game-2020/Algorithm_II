@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-const int MAZE_X = 15;	// 迷路の横幅
-const int MAZE_Y = 11;	// 迷路の縦幅
+const int MAZE_WIDTH = 15;	// 迷路の横幅
+const int MAZE_HEIGHT = 11;	// 迷路の縦幅
 
 // マスの状態
 enum Block {
@@ -20,13 +20,16 @@ enum Direction{
 	Down
 };
 
+struct Position{
+	int x;
+	int y;
+};
+
 class Method {
 public:
 
-	/// @brief インクリメント
 	Method();
 
-	/// @brief デクリメント
 	~Method();
 
 protected:
@@ -40,7 +43,7 @@ public:
 	static void Execute();
 
 protected:
-	static int maze[MAZE_X][MAZE_Y];	// 迷路に使う2次元配列
+	static Block maze[MAZE_HEIGHT][MAZE_WIDTH];	// 迷路に使う2次元配列
 
 };
 
@@ -56,6 +59,9 @@ public:
 
 	/// @brief 実行
 	static void Execute();
+
+private:
+	static void Dig( Position pos_ );
 
 };
 
@@ -108,7 +114,7 @@ public:
 
 	/// @brief デストラクタ
 	~ASter();
-	
+
 	/// @brief 実行
 	static void Execute();
 };

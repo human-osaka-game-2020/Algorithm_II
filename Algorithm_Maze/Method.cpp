@@ -1,7 +1,7 @@
 ﻿
 #include "Method.h"
 
-int Method::maze[MAZE_X][MAZE_Y] = {};
+Block Method::maze[MAZE_HEIGHT][MAZE_WIDTH] = {};
 
 Method::Method() {
 
@@ -12,9 +12,9 @@ Method::~Method() {
 }
 
 void Method::PrintMaze(){
-	for ( int y = 0; y < MAZE_Y; y++ ){
-		for ( int x = 0; x < MAZE_X; x++ ){
-			if ( maze[x][y] == Block::Wall ){
+	for ( int y = 0; y < MAZE_HEIGHT; y++ ){
+		for ( int x = 0; x < MAZE_WIDTH; x++ ){
+			if ( maze[y][x] == Block::Wall ){
 				printf( "■" );
 			}
 			else{
@@ -64,4 +64,5 @@ void Method::Execute() {
 		break;
 	}
 
+	PrintMaze();
 }
