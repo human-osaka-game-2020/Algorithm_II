@@ -30,6 +30,9 @@
     <ClCompile Include="..\Dijkstra.cpp">
       <Filter>ソース ファイル\Search</Filter>
     </ClCompile>
+    <ClCompile Include="..\Domino.cpp">
+      <Filter>ソース ファイル\Build</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Method.h" />

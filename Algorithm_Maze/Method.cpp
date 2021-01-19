@@ -31,7 +31,7 @@ void Method::Execute() {
 	int search = -1;
 
 	std::cout << "迷路の生成方法" << std::endl;
-	std::cout << ":0 = 穴掘り法 \n:1 = 壁伸ばし法" << std::endl;
+	std::cout << ":0 = 穴掘り法 \n:1 = 壁伸ばし法 \n:2 = 棒倒し法" << std::endl;
 	scanf_s( "%d", &create );
 
 	std::cout << "迷路の探索方法" << std::endl;
@@ -44,8 +44,11 @@ void Method::Execute() {
 		HoleDigging::Execute();
 		break;
 	case 1:
-	default:
 		WallExtend::Execute();
+		break;
+	case 2:
+	default:
+		Domino::Execute();
 		break;
 	}
 

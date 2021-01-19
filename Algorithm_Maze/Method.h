@@ -86,7 +86,22 @@ public:
 
 private:
 	static void Build( Position pos_ );
+};
 
+class Domino : public Method{
+public:
+
+	/// @brief コンストラクタ
+	Domino();
+
+	/// @brief デストラクタ
+	~Domino();
+
+	/// @brief 実行
+	static void Execute();
+
+private:
+	static void Build( int x, int y );
 };
 
 class BellmanFord : public Method{

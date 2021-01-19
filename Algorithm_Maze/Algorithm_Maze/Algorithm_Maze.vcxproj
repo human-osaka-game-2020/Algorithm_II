@@ -142,6 +142,7 @@
     <ClCompile Include="..\ASter.cpp" />
     <ClCompile Include="..\BellmanFord.cpp" />
     <ClCompile Include="..\Dijkstra.cpp" />
+    <ClCompile Include="..\Domino.cpp" />
     <ClCompile Include="..\HoleDigging.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Method.cpp" />
