@@ -2,14 +2,16 @@
 #define METHOD_H
 
 #include <iostream>
+#include <vector>
 
 const int MAZE_WIDTH = 15;	// 迷路の横幅
-const int MAZE_HEIGHT = 11;	// 迷路の縦幅
+const int MAZE_HEIGHT = 15;	// 迷路の縦幅
 
 // マスの状態
 enum Block {
 	Empty,	// 何もない
-	Wall	// 壁
+	Wall,	// 壁
+	Route	// 経路
 };
 
 // 方向
@@ -23,6 +25,11 @@ enum Direction{
 struct Position{
 	int x;
 	int y;
+	Direction from;
+
+	bool operator == ( Position pos_ ){
+		return ( x == pos_.x && y == pos_.y );
+	}
 };
 
 class Method {
@@ -107,6 +114,14 @@ public:
 
 	/// @brief 実行
 	static void Execute();
+
+private:
+	// return 正解のケース
+	static int Search();
+
+	// ケース<回数<x,y>>
+	static std::vector<std::vector<Position>> movingLog;
+
 };
 
 class ASter : public Method{

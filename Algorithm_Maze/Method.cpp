@@ -14,11 +14,11 @@ Method::~Method() {
 void Method::PrintMaze(){
 	for ( int y = 0; y < MAZE_HEIGHT; y++ ){
 		for ( int x = 0; x < MAZE_WIDTH; x++ ){
-			if ( maze[y][x] == Block::Wall ){
-				printf( "■" );
-			}
-			else{
-				printf( "　" );
+			switch( maze[y][x] ){
+			case Block::Wall: printf( "■" ); break;
+			case Block::Empty: printf( "　" ); break;
+			case Block::Route: printf( "・" ); break;
+			default: break;
 			}
 		}
 		printf( "\n" );

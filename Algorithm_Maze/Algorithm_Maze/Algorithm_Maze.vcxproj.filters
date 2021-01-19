@@ -26,10 +26,10 @@
     <ClCompile Include="..\BellmanFord.cpp">
       <Filter>ソース ファイル\Search</Filter>
     </ClCompile>
+    <ClCompile Include="..\Method.cpp" />
     <ClCompile Include="..\Dijkstra.cpp">
       <Filter>ソース ファイル\Search</Filter>
     </ClCompile>
-    <ClCompile Include="..\Method.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Method.h" />
