@@ -4,8 +4,8 @@
 #include <iostream>
 #include <vector>
 
-const int MAZE_WIDTH = 15;	// 迷路の横幅
-const int MAZE_HEIGHT = 15;	// 迷路の縦幅
+const int MAZE_WIDTH = 31;	// 迷路の横幅
+const int MAZE_HEIGHT = 31;	// 迷路の縦幅
 
 // マスの状態
 enum Block {
@@ -86,6 +86,9 @@ public:
 
 private:
 	static void Build( Position pos_ );
+	static Position Lottery();
+
+	static std::vector<Position> start;
 };
 
 class Domino : public Method{

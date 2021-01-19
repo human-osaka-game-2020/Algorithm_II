@@ -12,8 +12,8 @@ Method::~Method() {
 }
 
 void Method::PrintMaze(){
-	for ( int y = 0; y < MAZE_HEIGHT; y++ ){
-		for ( int x = 0; x < MAZE_WIDTH; x++ ){
+	for( int y = 0; y < MAZE_HEIGHT; y++ ){
+		for( int x = 0; x < MAZE_WIDTH; x++ ){
 			switch( maze[y][x] ){
 			case Block::Wall: printf( "■" ); break;
 			case Block::Empty: printf( "　" ); break;
