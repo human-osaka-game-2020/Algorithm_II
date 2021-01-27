@@ -1,0 +1,53 @@
+@startuml
+Title クラス図
+
+class Maze
+{
+    +Maze()
+    +~Maze()
+
+    +CreateMap()
+    +PrintMap()
+
+    -Dig()
+    -Extend()
+}
+
+class Algorithm
+{
+    +Algorithm()
+    +~Algorithm()
+
+    +Dijkstra()
+    +Belmanford()
+    +Astar()
+
+    -DijExplore()
+    -BelExplore()
+    -AstExplore()
+}
+
+enum MazeType
+{
+    Path
+    Wall
+    Route
+}
+
+enum Direction
+{
+    Up
+    Down
+    Left
+    Right
+}
+
+MazeType -- Maze : 関連
+MazeType -- Algorithm : 関連
+
+Direction -- Maze: 関連
+Direction -- Algorithm : 関連
+
+Maze <- Algorithm : 集約
+
+@enduml
