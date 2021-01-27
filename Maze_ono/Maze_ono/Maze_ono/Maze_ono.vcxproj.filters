@@ -10,18 +10,21 @@
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Maze_Method.cpp">
+    <ClCompile Include="Algorithm_Method.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Algorithm_Method.cpp">
+    <ClCompile Include="Maze.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Maze_Method.h">
+    <ClInclude Include="Algorithm_Method.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Algorithm_Method.h">
+    <ClInclude Include="Difinition.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Maze.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>

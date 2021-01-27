@@ -140,12 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Maze_Method.cpp" />
+    <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Algorithm_Method.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Maze_Method.h" />
+    <ClInclude Include="Maze.h" />
     <ClInclude Include="Algorithm_Method.h" />
+    <ClInclude Include="Difinition.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
